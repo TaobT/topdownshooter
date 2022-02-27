@@ -20,5 +20,5 @@ public class PlayerMovement : MonoBehaviour
         Movement();
     }
 
-    private void Movement() => rb.velocity = InputManager.moveVector * movementSpeed;
+    private void Movement() => rb.velocity = InputManager.MoveVector * movementSpeed;
 }
