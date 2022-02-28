@@ -25,7 +25,8 @@ public class WeaponManager : MonoBehaviour
 
     private void Shoot()
     {
-        if (currentAmmo <= 0) return;
+        if (weaponData == null) return;
+        if (currentAmmo <= 0 && !weaponData.IsMeele) return;
 
         currentAmmo -= weaponData.AmmoPerShot;
         shootingBehaviour.Shoot(weaponData.BulletPf, firePoint, transform.rotation.eulerAngles);
@@ -51,29 +52,20 @@ public class WeaponManager : MonoBehaviour
         if (weaponData == null) return;
 
         GameObject weapon = Instantiate(floorWeaponPf, firePoint.position, Quaternion.identity);
-        weapon.GetComponent<FloorWeapon>().currentAmmo = currentAmmo;
-        weapon.GetComponent<FloorWeapon>().weaponData = weaponData;
-        weapon.GetComponent<FloorWeapon>().Throw(firePoint.right);
+        weapon.GetComponent<FloorWeapon>().Throw(firePoint.right, currentAmmo, weaponData);
 
         GetComponent<SpriteRenderer>().sprite = noWeaponSprite;
         weaponData = null;
         currentAmmo = 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void SetNearWeapon(FloorWeapon weapon)
     {
-        if (collision == null) return;
-        if (collision.gameObject.GetComponent<FloorWeapon>())
-        {
-            nearWeapon = collision.gameObject.GetComponent<FloorWeapon>();
-        }
+        nearWeapon = weapon;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void RemoveNearWeapon()
     {
-        if (collision.gameObject.GetComponent<FloorWeapon>())
-        {
-            nearWeapon = null;
-        }
+        nearWeapon = null;
     }
 }

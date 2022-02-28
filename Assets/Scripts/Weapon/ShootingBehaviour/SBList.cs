@@ -11,6 +11,7 @@ public static class SBList
         {
             WeaponData.GunShotBehaviour.gun9mm => typeof(SB9mm),
             WeaponData.GunShotBehaviour.shotgunHomemade => typeof(SBHomemadeShotgun),
+            WeaponData.GunShotBehaviour.meeleMachete => typeof(SBMachete),
             _ => null,
         };
     }

@@ -8,7 +8,8 @@ public class WeaponData : ScriptableObject
     public enum GunShotBehaviour
     {
         gun9mm,
-        shotgunHomemade
+        shotgunHomemade,
+        meeleMachete
     }
 
     [SerializeField]
@@ -27,6 +28,12 @@ public class WeaponData : ScriptableObject
     private GameObject bulletPf;
     [SerializeField]
     private Sprite floorSprite;
+    [SerializeField]
+    private Vector2 colliderOffset;
+    [SerializeField]
+    private Vector2 colliderSize;
+    [SerializeField]
+    private bool isMeele;
 
 
     public string WeaponName { get { return weaponName; } }
@@ -37,4 +44,7 @@ public class WeaponData : ScriptableObject
     public Sprite PlayerSprite { get { return playerSprite; } }
     public GameObject BulletPf { get { return bulletPf; } }
     public Sprite FloorSprite { get { return floorSprite; } }
+    public Vector2 ColliderOffset { get { return colliderOffset; } }
+    public Vector2 ColliderSize { get { return colliderSize; } }
+    public bool IsMeele { get { return isMeele; } }
 }

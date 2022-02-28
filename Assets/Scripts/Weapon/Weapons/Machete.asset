@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebb83768fc922374f876ac17f37e58b2, type: 3}
-  m_Name: 9mm
+  m_Name: Machete
   m_EditorClassIdentifier: 
-  weaponName: 9mm
-  damage: 2
-  maxAmmo: 12
-  ammoPerShot: 1
-  shotBehaviour: 0
+  weaponName: Machete
+  damage: 0.6
+  maxAmmo: 0
+  ammoPerShot: 0
+  shotBehaviour: 2
   playerSprite: {fileID: 21300000, guid: 7d2e5c360914bee47a3c9baf3b027b51, type: 3}
-  bulletPf: {fileID: 2458661937283259094, guid: a89833ffd54014646935db8a03a3f02f, type: 3}
-  floorSprite: {fileID: 21300000, guid: 64230c0dfba64634eadd30e1c7c96c10, type: 3}
-  colliderOffset: {x: 0.00412029, y: -0.00000005960464}
-  colliderSize: {x: 0.8599094, y: 0.6374124}
+  bulletPf: {fileID: 3300562093642114494, guid: 8e2ef9b921c73a048bd55604d033bcf7, type: 3}
+  floorSprite: {fileID: 21300000, guid: f0fe204d4ebb83946becd34441f684df, type: 3}
+  colliderOffset: {x: 0, y: 0}
+  colliderSize: {x: 1, y: 1}
+  isMeele: 1
