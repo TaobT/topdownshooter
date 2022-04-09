@@ -5,13 +5,13 @@ using UnityEngine;
 
 public static class SBList
 {
-    public static Type GetShootingBehaviour(WeaponData.GunShotBehaviour gunShot)
+    public static Type GetShootingBehaviour(WeaponData.WeaponShootBehaviour gunShot)
     {
         return gunShot switch
         {
-            WeaponData.GunShotBehaviour.gun9mm => typeof(SB9mm),
-            WeaponData.GunShotBehaviour.shotgunHomemade => typeof(SBHomemadeShotgun),
-            WeaponData.GunShotBehaviour.meeleMachete => typeof(SBMachete),
+            WeaponData.WeaponShootBehaviour.gun9mm => typeof(SB9mm),
+            WeaponData.WeaponShootBehaviour.shotgunHomemade => typeof(SBHomemadeShotgun),
+            WeaponData.WeaponShootBehaviour.meeleMachete => typeof(SBMachete),
             _ => null,
         };
     }

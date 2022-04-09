@@ -31,7 +31,7 @@ public class FloorWeapon : MonoBehaviour
 
     private void Start()
     {
-        shootingBehaviour = SBList.GetShootingBehaviour(weaponData.ShotBehaviour);
+        shootingBehaviour = SBList.GetShootingBehaviour(weaponData.ShootBehaviour);
         gameObject.AddComponent(shootingBehaviour);
         spriteRenderer.sprite = weaponData.FloorSprite;
 

@@ -6,8 +6,14 @@ public class SBMachete : ShootingBehaviour
 {
     public override Vector3 FirePointLocalPosition => new Vector3(1.25f,0);
 
-    public override void Shoot(GameObject bulletPf, Transform firePoint, Vector3 bulletDir)
+    public override float NextShootTime => 1.5f;
+
+    public override bool IsAuto => false;
+
+    public override void Shooting()
     {
-        Instantiate(bulletPf, firePoint.position, Quaternion.Euler(bulletDir), firePoint);
+        Debug.Log("Machete Attack!");
+        Instantiate(BulletPf, FirePoint.position, Quaternion.Euler(GunnerTransform.rotation.eulerAngles), FirePoint);
+        base.Shooting();
     }
 }

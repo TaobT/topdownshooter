@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     //Stats
-    private float movementSpeed = 6;
+    private readonly float runSpeed = 4;
 
     private void Awake()
     {
@@ -20,5 +20,5 @@ public class PlayerMovement : MonoBehaviour
         Movement();
     }
 
-    private void Movement() => rb.velocity = InputManager.MoveVector * movementSpeed;
+    private void Movement() => rb.velocity = InputManager.MoveVector * runSpeed;
 }

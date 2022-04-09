@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class SB9mm : ShootingBehaviour
 {
-    public override Vector3 FirePointLocalPosition => new Vector3(2.75f,0);
+    public override Vector3 FirePointLocalPosition => new Vector3(1.325f, 0.036f);
 
-    public override void Shoot(GameObject bulletPf, Transform firePoint, Vector3 bulletDir)
+    public override float NextShootTime => 0.2f;
+
+    public override bool IsAuto => false;
+
+    public override void Shooting()
     {
-        Instantiate(bulletPf, firePoint.position, Quaternion.Euler(bulletDir));
+        Instantiate(BulletPf, FirePoint.position, Quaternion.Euler(GunnerTransform.rotation.eulerAngles));
+        base.Shooting();
     }
 }

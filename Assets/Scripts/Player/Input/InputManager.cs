@@ -19,6 +19,10 @@ public class InputManager : MonoBehaviour
     public static Action OnUseStart;
     public static Action OnUsePerformed;
     public static Action OnUseCanceled;
+
+    public static Action OnReloadStart;
+    public static Action OnReloadPerformed;
+    public static Action OnReloadCanceled;
     #endregion
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -37,6 +41,13 @@ public class InputManager : MonoBehaviour
         else if (context.performed) OnUsePerformed?.Invoke();
         else if (context.canceled) OnUseCanceled?.Invoke();
     }
+
+    public void OnReloadInput(InputAction.CallbackContext context)
+    {
+        if (context.started) OnReloadStart?.Invoke();
+        else if (context.performed) OnReloadPerformed?.Invoke();
+        else if (context.canceled) OnReloadCanceled?.Invoke();
+    }    
 
     public void OnLeftClickInput(InputAction.CallbackContext context)
     {

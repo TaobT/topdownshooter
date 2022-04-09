@@ -16,9 +16,11 @@ MonoBehaviour:
   damage: 0.8
   maxAmmo: 1
   ammoPerShot: 1
-  shotBehaviour: 1
+  shootBehaviour: 1
+  weaponAmmoType: 1
   playerSprite: {fileID: 21300000, guid: 7d2e5c360914bee47a3c9baf3b027b51, type: 3}
   bulletPf: {fileID: 2458661937283259094, guid: a89833ffd54014646935db8a03a3f02f, type: 3}
   floorSprite: {fileID: 21300000, guid: 7fe1092d7b9ed034c806f99ec96df885, type: 3}
-  colliderOffset: {x: 0.01194918, y: -0.1672881}
-  colliderSize: {x: 2.521525, y: 0.5698307}
+  colliderOffset: {x: 0.006827235, y: -0.07765327}
+  colliderSize: {x: 1.292248, y: 0.2983651}
+  isMeele: 0

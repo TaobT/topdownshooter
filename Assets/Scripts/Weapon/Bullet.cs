@@ -6,7 +6,8 @@ public class Bullet : MonoBehaviour
 {
     private float damage;
     private Rigidbody2D rb;
-
+    [SerializeField]
+    private float speed;
     public void SetDamage(float _damage)
     {
         damage = _damage;
@@ -16,7 +17,13 @@ public class Bullet : MonoBehaviour
     {
         Invoke("RemoveBullet", 5);
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.right * 5000);
+        rb.AddForce(transform.right * speed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null) return;
+        RemoveBullet();
     }
 
     private void RemoveBullet()
