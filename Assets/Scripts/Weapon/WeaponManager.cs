@@ -35,7 +35,7 @@ public class WeaponManager : MonoBehaviour
 
     public bool HasWeapon()
     {
-        return nearWeapon != null;
+        return weaponData != null;
     }
 
     private void StartShooting()
@@ -140,6 +140,7 @@ public class WeaponManager : MonoBehaviour
 
     public void SetNearWeapon(FloorWeapon weapon)
     {
+        Debug.Log(weapon.name);
         nearWeapon = weapon;
     }
 

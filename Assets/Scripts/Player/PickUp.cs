@@ -50,11 +50,13 @@ public class PickUp : MonoBehaviour
 
     private void SendNearestWeaponToWeaponManager()
     {
-        if (nearestWeapon != null && !_weaponManager.HasWeapon())
+        if (nearestWeapon != null)
         {
-            _weaponManager.SetNearWeapon(nearestWeapon);
+            Debug.Log("Hasn't Weapon: " + !_weaponManager.HasWeapon());
+            if(!_weaponManager.HasWeapon()) _weaponManager.SetNearWeapon(nearestWeapon);
             nearestWeapon.transform.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
         }
+        else _weaponManager.SetNearWeapon(null);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +70,7 @@ public class PickUp : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.gameObject.GetComponent<FloorWeapon>()) return;
-
+        collision.transform.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         weaponsTransform.Remove(collision.transform);
     }
 
